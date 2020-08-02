@@ -2,10 +2,21 @@ import pandas as pd
 import yfinance as yf
 from yahoofinancials import YahooFinancials
 from datetime import date, timedelta
-
 import matplotlib.pyplot as plt
 from pandas.plotting import table
 import seaborn as sns
+
+## LSTM Network for Regression
+import numpy
+import matplotlib.pyplot as plt
+import pandas
+import math
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import LSTM
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error
+
 
 
 
@@ -24,15 +35,15 @@ tsla_df = yf.download(NAME_OF_STOCK,
                       progress=True).reset_index()
 
 
-plt.figure(figsize=(15, 10))
-
-ax = sns.kdeplot(tsla_df['Open'])
-ax.set_xlabel('Opening Price of the Stock')
-ax.set_ylabel('Distribution of Opening Price')
-ax.set_title('Density Plot')
-
-plt.tight_layout()
-plt.savefig("density_plot.png")
+# plt.figure(figsize=(15, 10))
+#
+# ax = sns.kdeplot(tsla_df['Open'])
+# ax.set_xlabel('Opening Price of the Stock')
+# ax.set_ylabel('Distribution of Opening Price')
+# ax.set_title('Density Plot')
+#
+# plt.tight_layout()
+# plt.savefig("density_plot.png")
 
 
 # Plot closing price
@@ -46,17 +57,6 @@ plt.grid(True)
 plt.savefig("line_plot.png")
 
 
-## LSTM Network for Regression
-
-import numpy
-import matplotlib.pyplot as plt
-import pandas
-import math
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import mean_squared_error
 
 # fix random seed for reproducibility
 numpy.random.seed(7)

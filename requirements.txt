@@ -1,3 +1,7 @@
 panda
 yfinance
 yahoofinancials
+matplotlib
+tensorflow
+keras
+sklearn
