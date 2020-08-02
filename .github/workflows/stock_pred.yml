@@ -18,8 +18,5 @@ jobs:
           cml-publish line_plot.png --md >> report.md
           cml-publish forecasting_plot.png --md >> report.md
 
-          cml-publish line_plot.png --md >> report.md
-          cml-publish forecasting_plot.png --md >> report.md
-
           cml-send-comment report.md
           cml-send-github-check report.md
